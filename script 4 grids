@@ -1,0 +1,69 @@
+let container = document.querySelector('.container')
+let clear = document.querySelector('.clear')
+let grid = document.querySelector('#grid')
+let activeColor = document.querySelector('.activeColor')
+let choiseColor='';
+
+
+for(var i=0;i<1000;i++){
+    var gridDiv = document.createElement('div');
+    gridDiv.setAttribute('class','oneGrid');
+    grid.after(gridDiv);
+
+    document.querySelector('.oneGrid').addEventListener("mousemove", (event) => {
+    event.target.style.backgroundColor=`${choiseColor}`;
+    });
+    }
+
+
+    function choiseColorFun(color){
+        console.log('Выбранный цвет #', color)
+        switch(color) {
+            case 0:  
+            choiseColor='red';
+            activeColor.style.backgroundColor=`${choiseColor}`;
+            console.log('Color is ', choiseColor)
+              break
+
+            case 1:  
+            choiseColor='blue';
+            activeColor.style.backgroundColor=`${choiseColor}`;
+            console.log('Color is ', choiseColor)
+              break
+          
+            case 2: 
+            choiseColor='black';
+            activeColor.style.backgroundColor=`${choiseColor}`;
+            console.log('Color is ', choiseColor)
+              break
+
+            case 3: 
+            choiseColor='yellow';
+            activeColor.style.backgroundColor=`${choiseColor}`;
+            console.log('Color is ', choiseColor)
+              break
+              
+            case 4: 
+            choiseColor='green';
+            activeColor.style.backgroundColor=`${choiseColor}`;
+             console.log('Color is ', choiseColor)
+             break
+
+             case 5: 
+            choiseColor='saddlebrown';
+            activeColor.style.backgroundColor=`${choiseColor}`;
+             console.log('Color is ', choiseColor)
+             break
+          }
+    }
+
+    
+    document.querySelector('.clear').addEventListener("click", () => {
+        let elements = document.querySelectorAll('.oneGrid');
+ 
+        for (let elem of elements) {
+            elem.style.backgroundColor='white'
+          }
+          choiseColor='';
+          activeColor.style.backgroundColor=`${choiseColor}`;
+    })
